@@ -1,2 +1,5 @@
 #!/bin/bash
-docker image inspect doteva.com/basenodes:latest
+
+. scripts/PARAMETERS
+
+docker image inspect "$IMAGENAME"

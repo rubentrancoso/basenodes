@@ -1,7 +1,7 @@
 #!/bin/bash
 . scripts/lib/common.sh
 
-IMAGENAME="doteva.com/basenodes"
+. scripts/PARAMETERS
 
 # if theres a proxy in the enviroment pass it to npm inside Dockerfile
 if [ -n "$HTTP_PROXY" ]
@@ -12,11 +12,11 @@ then
         --build-arg HTTPS_PROXY=${proxy} \
         --build-arg http_proxy=${proxyy} \
         --build-arg https_proxy=${proxy} \
-        -t ${IMAGENAME} \
+        -t "$IMAGENAME" \
         .
 else
     docker build \
-        -t ${IMAGENAME} \
+        -t "$IMAGENAME" \
         .
 fi
 

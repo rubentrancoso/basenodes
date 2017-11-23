@@ -1,2 +1,5 @@
 #!/bin/bash
-docker run -p 3000:3000 -it doteva.com/basenodes:latest
+
+. scripts/PARAMETERS
+
+docker run -p 3000:3000 -it "$IMAGENAME"
